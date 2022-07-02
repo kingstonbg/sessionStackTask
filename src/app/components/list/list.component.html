@@ -1,0 +1,9 @@
+<div class="list" *ngIf="list">
+  <h6 class="p-2">{{ list.header }}</h6>
+  <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)" [cdkDropListData]="list.cards" dragAndDropManagerRoot>
+    <ng-container *ngFor="let card of list.cards; let i = index">
+      <app-card [card]="card" cdkDrag [cdkDragData]="card"></app-card>
+    </ng-container>
+  </div>
+  <app-add-card [listId]="list.id"></app-add-card>
+</div>

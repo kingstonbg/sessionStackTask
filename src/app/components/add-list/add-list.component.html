@@ -1,0 +1,32 @@
+<div class="card"       *ngIf="!isFormShown">
+  <div class="card-body">
+    <button
+      type="button"
+      class="btn btn-outline-dark btn-block"
+      (click)="showForm()"
+    >
+      Add another list
+    </button>
+  </div>
+</div>
+<div class="card" *ngIf="isFormShown">
+  <div class="card-body">
+    <input type="text" class="form-control" placeholder="Enter Title" #header/>
+  </div>
+  <div class="card-footer d-flex">
+    <button
+    type="submit"
+    class="btn btn-primary me-2"
+    (click)="addList(header.value)"
+  >
+    Add list
+  </button>
+    <button
+    type="submit"
+    class="btn btn-secondary "
+    (click)="closeForm()"
+  >
+    Cancel
+  </button>
+  </div>
+</div>
